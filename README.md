@@ -28,7 +28,7 @@ VITE_VUE_APP_API_URL='https://dohlmpicjcxrbdqzyxdx.supabase.co/storage/v1/object
 Чтобы запустить сервер разработки с помощью "горячей перезагрузки", выполните следующую команду. Сервер будет доступен по адресу [http://localhost:3000](http://localhost:3000):
 
 ```bash
-yarn dev
+npm dev
 ```
 
 (Повторите для npm, pnpm и bun с соответствующими командами.)
@@ -38,7 +38,7 @@ yarn dev
 Чтобы собрать проект для production используйте команду:
 
 ```bash
-yarn build
+npm build
 ```
 
 (Повторите для npm, pnpm и bun с соответствующими командами.)
