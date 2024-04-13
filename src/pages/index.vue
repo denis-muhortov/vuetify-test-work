@@ -99,8 +99,8 @@
 
 <style lang="scss" scoped>
 .container{
-  background-color: rgb(243, 243, 243);
   height: 100%;
+  width: 100%;
 
   .v-table {
     border-radius: 8px;

@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer :disable-resize-watcher="false" :width="240" style="display: flex; align-items: center;">
+    <v-navigation-drawer :disable-resize-watcher="true" :width="240" style="display: flex; align-items: center;">
         <v-sheet style="display: flex;" :width="200">
             <v-list density="comfortable" v-model:opened="open">
                 <v-list-item value="Organizations" class="mb-1">
