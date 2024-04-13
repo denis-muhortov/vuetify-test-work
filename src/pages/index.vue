@@ -83,11 +83,11 @@
           </p>
         </template>
         <template v-slot:header.actions> Действия </template>
-        <template v-slot:item.actions>
-          <v-btn variant="text">
+        <template v-slot:item.actions="{ item }">
+          <v-btn variant="text" @click="getExport(item.id)">
             <v-img src="../assets/images/download.svg" aspect-ratio="1/1" :width="15"/>
           </v-btn>
-          <v-btn variant="text">
+          <v-btn variant="text" @click="deleteProducts(item.id)">
             <v-img src="../assets/images/delete.svg" aspect-ratio="1/1" :width="15"/>
           </v-btn>
         </template>
@@ -148,7 +148,7 @@ export default {
   },
   methods:{
     getProduct(){
-      this.loading = true,
+      this.loading = true;
       api.getProducts().then(res => {
         this.store.products = this.items = res.data;
         this.loading = false;
@@ -160,7 +160,17 @@ export default {
                         + ('0' + (date.getMonth()+1)).slice(-2) + '.'
                         + date.getFullYear();
       return MyDateString
-    }
+    },
+    getExport(id: number){
+      api.getExport(id).then(res => {
+        console.log(res.data);
+      })
+    },
+    deleteProducts(id: number){
+      api.deleteProducts(id).then(res => {
+        console.log(res.data);
+      })
+    },
   }
 }
 </script>

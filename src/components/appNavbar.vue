@@ -171,6 +171,10 @@
 .v-list-group--open .item.v-list-item--active{
     .item_list{
         color: white;
+        &::before{
+            content: '';
+            display: none;
+        }
     }
 }
 .v-list-item--active{

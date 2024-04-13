@@ -10,8 +10,21 @@ else apiUrl = apiDefault;
 export const apiClient = axios.create({
     baseURL: apiUrl,
 });
+
+export const apiServer = axios.create({
+    baseURL: '/api/cessions/registries',
+});
+
 export default {
     async getProducts() {
         return await apiClient.get()
     },
+    async getExport(id) {
+        return await apiServer.get(`/${id}/export`)
+    },
+    async deleteProducts(id) {
+        return await apiServer.delete(`/${id}`)
+    },
 }
+
+
