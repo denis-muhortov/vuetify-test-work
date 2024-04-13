@@ -154,13 +154,6 @@ export default {
         this.loading = false;
       })
     },
-    formatedData(data: string){
-      let date = new Date(data);
-      let MyDateString = ('0' + date.getDate()).slice(-2) + '.'
-                        + ('0' + (date.getMonth()+1)).slice(-2) + '.'
-                        + date.getFullYear();
-      return MyDateString
-    },
     getExport(id: number){
       api.getExport(id).then(res => {
         console.log(res.data);
@@ -170,6 +163,13 @@ export default {
       api.deleteProducts(id).then(res => {
         console.log(res.data);
       })
+    },
+    formatedData(data: string){
+      let date = new Date(data);
+      let MyDateString = ('0' + date.getDate()).slice(-2) + '.'
+                        + ('0' + (date.getMonth()+1)).slice(-2) + '.'
+                        + date.getFullYear();
+      return MyDateString
     },
   }
 }
